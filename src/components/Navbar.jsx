@@ -25,7 +25,7 @@ export const Navbar = ({ onOpenEnquiry }) => {
     <>
       <header className={`navbar ${isScrolled ? 'scrolled' : 'dark-hero'}`}>
         <div className="site-container nav-container">
-          <a href="#" className="nav-brand" aria-label="Aurelia & Stone Homepage">
+          <a href="#" className="nav-brand" aria-label="Osho Properties Homepage">
             <span className="nav-brand-title">{BUSINESS_CONFIG.brandName}</span>
             <span className="nav-brand-sub">Private Residences · Lagos</span>
           </a>

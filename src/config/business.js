@@ -1,11 +1,11 @@
 /**
- * Centralized Business & Brand Configuration — AURELIA & STONE
+ * Centralized Business & Brand Configuration — OSHO PROPERTIES
  * Advisory contacts, Lagos office details, and structured WhatsApp/Email pre-fills.
  */
 
 export const BUSINESS_CONFIG = {
-  brandName: 'AURELIA & STONE',
-  shortBrandName: 'A&S',
+  brandName: 'OSHO PROPERTIES',
+  shortBrandName: 'OSHO',
   tagline: 'Spaces worth coming home to.',
   subTagline: 'Curated Private Residences · Lagos, Nigeria',
   marketLabel: 'Lagos, Nigeria',
@@ -15,9 +15,9 @@ export const BUSINESS_CONFIG = {
     phone: '+234 (0) 800 287 3542',
     phoneRaw: '+2348002873542',
     whatsappNumber: '2348002873542', // Format for wa.me URL
-    email: 'advisory@aureliastone.com',
-    enquiriesEmail: 'enquiries@aureliastone.com',
-    instagram: '@aureliastone.ng',
+    email: 'advisory@oshoproperties.com',
+    enquiriesEmail: 'enquiries@oshoproperties.com',
+    instagram: '@oshoproperties.ng',
     instagramUrl: 'https://instagram.com',
     linkedinUrl: 'https://linkedin.com',
     officeAddress: '14 Alexander Boulevard, Ikoyi, Lagos, Nigeria',
@@ -31,7 +31,7 @@ export const BUSINESS_CONFIG = {
     const { name, phoneOrEmail, note, preferredDate } = customDetails;
 
     if (intent === 'inspection' && property) {
-      const message = `Hello Aurelia & Stone Advisory,
+      const message = `Hello Osho Properties Advisory,
 
 I would like to schedule a private inspection for:
 
@@ -46,7 +46,7 @@ Thank you.`;
     }
 
     if (intent === 'dossier' && property) {
-      const message = `Hello Aurelia & Stone Advisory,
+      const message = `Hello Osho Properties Advisory,
 
 I would like to request the due diligence dossier and private brochure for:
 
@@ -61,7 +61,7 @@ Thank you.`;
     }
 
     if (intent === 'search') {
-      const message = `Hello Aurelia & Stone Advisory,
+      const message = `Hello Osho Properties Advisory,
 
 I would like to initiate a bespoke property search mandate.
 
@@ -74,7 +74,7 @@ Thank you.`;
     }
 
     if (property) {
-      const message = `Hello Aurelia & Stone Advisory,
+      const message = `Hello Osho Properties Advisory,
 
 I am interested in this property:
 
@@ -88,7 +88,7 @@ Thank you.`;
       return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
     }
 
-    const genericMessage = `Hello Aurelia & Stone Advisory,
+    const genericMessage = `Hello Osho Properties Advisory,
 
 I would like to enquire about your available luxury property portfolio in Lagos.
 ${name ? `Name: ${name}\n` : ''}${phoneOrEmail ? `Contact: ${phoneOrEmail}\n` : ''}
@@ -103,22 +103,22 @@ Thank you.`;
 
     if (intent === 'inspection' && property) {
       const subject = `Private Inspection Request: ${property.title} (${property.location})`;
-      const body = `Hello Aurelia & Stone Advisory,\n\nI would like to schedule a private inspection for the following property:\n\nProperty: ${property.title}\nLocation: ${property.location}\nGuide Price: ${property.price}\nReference: ${property.id}\n${preferredDate ? `Preferred Timing: ${preferredDate}\n` : ''}\nClient Name: ${name || 'N/A'}\nContact: ${phoneOrEmail || 'N/A'}\n\nAdditional Notes:\n${note || 'Please confirm available appointment slots.'}\n\nKind regards,`;
+      const body = `Hello Osho Properties Advisory,\n\nI would like to schedule a private inspection for the following property:\n\nProperty: ${property.title}\nLocation: ${property.location}\nGuide Price: ${property.price}\nReference: ${property.id}\n${preferredDate ? `Preferred Timing: ${preferredDate}\n` : ''}\nClient Name: ${name || 'N/A'}\nContact: ${phoneOrEmail || 'N/A'}\n\nAdditional Notes:\n${note || 'Please confirm available appointment slots.'}\n\nKind regards,`;
       return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 
     if (intent === 'search') {
       const subject = `Bespoke Acquisition Mandate Request — Lagos Portfolio`;
-      const body = `Hello Aurelia & Stone Advisory,\n\nI would like to initiate a private search for properties matching my criteria.\n\nClient Name: ${name || 'N/A'}\nContact: ${phoneOrEmail || 'N/A'}\n\nAcquisition Brief / Specifications:\n${note || 'Please reach out to discuss my requirements.'}\n\nKind regards,`;
+      const body = `Hello Osho Properties Advisory,\n\nI would like to initiate a private search for properties matching my criteria.\n\nClient Name: ${name || 'N/A'}\nContact: ${phoneOrEmail || 'N/A'}\n\nAcquisition Brief / Specifications:\n${note || 'Please reach out to discuss my requirements.'}\n\nKind regards,`;
       return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 
     if (property) {
       const subject = `Enquiry: ${property.title} (${property.location})`;
-      const body = `Hello Aurelia & Stone Advisory,\n\nI am requesting information regarding:\n\nProperty: ${property.title}\nLocation: ${property.location}\nPrice: ${property.price}\nReference: ${property.id}\n\nClient Name: ${name || 'N/A'}\nContact: ${phoneOrEmail || 'N/A'}\n\nNotes:\n${note || 'Please provide details on purchase terms and due diligence.'}\n\nKind regards,`;
+      const body = `Hello Osho Properties Advisory,\n\nI am requesting information regarding:\n\nProperty: ${property.title}\nLocation: ${property.location}\nPrice: ${property.price}\nReference: ${property.id}\n\nClient Name: ${name || 'N/A'}\nContact: ${phoneOrEmail || 'N/A'}\n\nNotes:\n${note || 'Please provide details on purchase terms and due diligence.'}\n\nKind regards,`;
       return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 
-    return `mailto:${email}?subject=${encodeURIComponent('Private Client Portfolio Enquiry — Aurelia & Stone')}`;
+    return `mailto:${email}?subject=${encodeURIComponent('Private Client Portfolio Enquiry — Osho Properties')}`;
   }
 };

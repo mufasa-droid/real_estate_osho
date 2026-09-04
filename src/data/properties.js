@@ -1,5 +1,5 @@
 /**
- * Curated Property Catalog — AURELIA & STONE
+ * Curated Property Catalog — OSHO PROPERTIES
  * Structure strictly adheres to premium real estate showcase specifications.
  * All property entries reflect prime Lagos locations and commercial specs.
  */
