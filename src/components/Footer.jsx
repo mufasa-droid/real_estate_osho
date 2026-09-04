@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, MessageCircle, Mail } from 'lucide-react';
+import { ArrowUp, MessageCircle } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../config/business';
 
 // Clean inline SVGs for social brands
@@ -25,17 +25,17 @@ export const Footer = ({ onOpenEnquiry }) => {
   };
 
   return (
-    <footer style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', paddingTop: '5rem', paddingBottom: '3rem', borderTop: '1px solid #242424' }}>
+    <footer className="site-footer">
       <div className="site-container">
         {/* Main Footer Row */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '3.5rem', marginBottom: '4rem' }}>
+        <div className="footer-grid">
           {/* Brand Col */}
           <div>
-            <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+            <div className="footer-brand-title">
               {BUSINESS_CONFIG.brandName}
             </div>
-            <p style={{ fontSize: '0.88rem', color: '#A3A29B', lineHeight: 1.7, maxWidth: '300px', marginBottom: '1.5rem', fontWeight: 300 }}>
-              Curated architectural residences and prime real estate portfolio for discerning private clients.
+            <p className="footer-brand-desc">
+              Private residence showcase and real-estate advisory representing distinguished properties across Lagos, Nigeria.
             </p>
             <div style={{ display: 'flex', gap: '1.25rem' }}>
               <a 
@@ -70,53 +70,54 @@ export const Footer = ({ onOpenEnquiry }) => {
 
           {/* Quick Nav */}
           <div>
-            <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.16em', color: 'var(--accent)', marginBottom: '1.25rem', fontWeight: 600 }}>
+            <div className="footer-col-header">
               Navigation
             </div>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <ul className="footer-links-list">
               <li>
-                <a href="#hero" style={{ color: '#E5E4DE', textDecoration: 'none', fontSize: '0.88rem', transition: 'color 0.2s' }}>Home</a>
+                <a href="#hero" className="footer-link">Home</a>
               </li>
               <li>
-                <a href="#featured" style={{ color: '#E5E4DE', textDecoration: 'none', fontSize: '0.88rem', transition: 'color 0.2s' }}>Featured Residences</a>
+                <a href="#featured" className="footer-link">Featured Residences</a>
               </li>
               <li>
-                <a href="#collection" style={{ color: '#E5E4DE', textDecoration: 'none', fontSize: '0.88rem', transition: 'color 0.2s' }}>The Collection</a>
+                <a href="#collection" className="footer-link">The Collection</a>
               </li>
               <li>
-                <a href="#about" style={{ color: '#E5E4DE', textDecoration: 'none', fontSize: '0.88rem', transition: 'color 0.2s' }}>Brand Philosophy</a>
+                <a href="#about" className="footer-link">About The Advisory</a>
               </li>
               <li>
-                <a href="#contact" style={{ color: '#E5E4DE', textDecoration: 'none', fontSize: '0.88rem', transition: 'color 0.2s' }}>Private Advisory</a>
+                <a href="#contact" className="footer-link">Private Services</a>
               </li>
             </ul>
           </div>
 
           {/* Locations */}
           <div>
-            <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.16em', color: 'var(--accent)', marginBottom: '1.25rem', fontWeight: 600 }}>
-              Advisory Offices
+            <div className="footer-col-header">
+              Advisory Presence
             </div>
-            <p style={{ fontSize: '0.88rem', color: '#E5E4DE', marginBottom: '0.75rem', lineHeight: 1.6 }}>
-              <strong>Lagos Flagship:</strong><br />
+            <p style={{ fontSize: '0.88rem', color: '#E5E4DE', marginBottom: '0.85rem', lineHeight: 1.6 }}>
+              <strong style={{ color: '#FFFFFF' }}>Lagos Flagship Office:</strong><br />
               {BUSINESS_CONFIG.contact.officeAddress}
             </p>
             <p style={{ fontSize: '0.88rem', color: '#A3A29B', lineHeight: 1.6 }}>
-              <strong>London Representation:</strong><br />
+              <strong style={{ color: '#E5E4DE' }}>UK & Diaspora Representation:</strong><br />
               {BUSINESS_CONFIG.contact.secondaryAddress}
             </p>
           </div>
 
           {/* Quick Consultation CTA */}
           <div>
-            <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.16em', color: 'var(--accent)', marginBottom: '1.25rem', fontWeight: 600 }}>
+            <div className="footer-col-header">
               Private Client Desk
             </div>
             <p style={{ fontSize: '0.85rem', color: '#A3A29B', marginBottom: '1.25rem', lineHeight: 1.6 }}>
-              For bespoke acquisition mandates and confidential listings.
+              For bespoke acquisition mandates and confidential property dossiers.
             </p>
             <button 
-              onClick={() => onOpenEnquiry(null)}
+              type="button"
+              onClick={() => onOpenEnquiry(null, 'general')}
               className="btn btn-outline-white"
               style={{ width: '100%', padding: '0.85rem 1.25rem', fontSize: '0.72rem' }}
             >
@@ -126,35 +127,15 @@ export const Footer = ({ onOpenEnquiry }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{ 
-          borderTop: '1px solid #242424', 
-          paddingTop: '2rem', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center', 
-          flexWrap: 'wrap', 
-          gap: '1rem',
-          fontSize: '0.78rem',
-          color: '#767676'
-        }}>
+        <div className="footer-bottom-bar">
           <div>
-            © {new Date().getFullYear()} {BUSINESS_CONFIG.brandName}. All architectural rights reserved.
+            © {new Date().getFullYear()} {BUSINESS_CONFIG.brandName}. Private Residences & Real Estate Advisory.
           </div>
 
           <button 
+            type="button"
             onClick={scrollToTop}
-            style={{ 
-              background: 'none', 
-              border: 'none', 
-              color: '#A3A29B', 
-              cursor: 'pointer', 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '0.4rem',
-              fontSize: '0.75rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em'
-            }}
+            className="back-to-top-btn"
           >
             <span>Back to top</span>
             <ArrowUp size={14} />

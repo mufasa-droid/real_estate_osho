@@ -3,8 +3,10 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FeaturedProperties } from './components/FeaturedProperties';
 import { PropertyCollection } from './components/PropertyCollection';
+import { TrustSection } from './components/TrustSection';
 import { About } from './components/About';
 import { FeaturedVisual } from './components/FeaturedVisual';
+import { PrivateSearch } from './components/PrivateSearch';
 import { CTA } from './components/CTA';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -15,6 +17,7 @@ export function App() {
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const [enquiryProperty, setEnquiryProperty] = useState(null);
+  const [enquiryIntent, setEnquiryIntent] = useState('general');
 
   const handleOpenProperty = (property) => {
     setSelectedProperty(property);
@@ -24,14 +27,16 @@ export function App() {
     setSelectedProperty(null);
   };
 
-  const handleOpenEnquiry = (property = null) => {
+  const handleOpenEnquiry = (property = null, intent = 'general') => {
     setEnquiryProperty(property);
+    setEnquiryIntent(intent);
     setEnquiryModalOpen(true);
   };
 
   const handleCloseEnquiry = () => {
     setEnquiryModalOpen(false);
     setEnquiryProperty(null);
+    setEnquiryIntent('general');
   };
 
   return (
@@ -44,26 +49,32 @@ export function App() {
         {/* 1. Hero Section */}
         <Hero onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 2. Featured Properties */}
+        {/* 2. Featured Residences */}
         <FeaturedProperties onSelectProperty={handleOpenProperty} />
 
         {/* 3. The Property Collection & Filters */}
         <PropertyCollection onSelectProperty={handleOpenProperty} />
 
-        {/* 4. About & Brand Philosophy */}
+        {/* 4. Trust & Due Diligence Standard */}
+        <TrustSection onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 5. About & Brand Philosophy */}
         <About onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 5. Featured Full-Width Visual */}
+        {/* 6. Featured Full-Width Visual */}
         <FeaturedVisual />
 
-        {/* 6. Call to Action */}
+        {/* 7. Private Bespoke Search Mandates */}
+        <PrivateSearch onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 8. Call to Action */}
         <CTA onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 7. Contact & Private Advisory */}
+        {/* 9. Contact & Private Advisory Desk */}
         <ContactSection />
       </main>
 
-      {/* 8. Editorial Footer */}
+      {/* 10. Editorial Footer */}
       <Footer onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Modals */}
@@ -71,12 +82,14 @@ export function App() {
         <PropertyModal 
           property={selectedProperty} 
           onClose={handleCloseProperty} 
+          onOpenEnquiry={handleOpenEnquiry}
         />
       )}
 
       {enquiryModalOpen && (
         <EnquiryModal 
           property={enquiryProperty} 
+          initialIntent={enquiryIntent}
           onClose={handleCloseEnquiry} 
         />
       )}

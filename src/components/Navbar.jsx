@@ -27,7 +27,7 @@ export const Navbar = ({ onOpenEnquiry }) => {
         <div className="site-container nav-container">
           <a href="#" className="nav-brand" aria-label="Aurelia & Stone Homepage">
             <span className="nav-brand-title">{BUSINESS_CONFIG.brandName}</span>
-            <span className="nav-brand-sub">Private Residences</span>
+            <span className="nav-brand-sub">Private Residences · Lagos</span>
           </a>
 
           {/* Desktop Navigation Links */}
@@ -42,9 +42,10 @@ export const Navbar = ({ onOpenEnquiry }) => {
           {/* Nav Actions */}
           <div className="nav-actions">
             <button 
-              onClick={() => onOpenEnquiry(null)}
+              type="button"
+              onClick={() => onOpenEnquiry(null, 'general')}
               className="btn btn-primary nav-cta"
-              style={{ padding: '0.75rem 1.5rem', fontSize: '0.72rem' }}
+              style={{ padding: '0.75rem 1.4rem', fontSize: '0.72rem' }}
             >
               <span>Enquire</span>
               <ArrowUpRight size={14} />
@@ -67,7 +68,7 @@ export const Navbar = ({ onOpenEnquiry }) => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
             <div className="nav-brand-title" style={{ color: '#FFFFFF' }}>{BUSINESS_CONFIG.brandName}</div>
-            <div className="nav-brand-sub" style={{ color: '#A3A29B' }}>Private Residences</div>
+            <div className="nav-brand-sub" style={{ color: '#A3A29B' }}>Private Residences · Lagos</div>
           </div>
           <button 
             onClick={closeMenu} 
@@ -87,11 +88,12 @@ export const Navbar = ({ onOpenEnquiry }) => {
         </nav>
 
         <div style={{ borderTop: '1px solid #2A2A2A', paddingTop: '1.5rem' }}>
-          <p style={{ fontSize: '0.8rem', color: '#A3A29B', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.14em' }}>
-            Private Enquiries
+          <p style={{ fontSize: '0.78rem', color: '#A3A29B', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.14em' }}>
+            Private Enquiries & Advisory
           </p>
           <button 
-            onClick={() => { closeMenu(); onOpenEnquiry(null); }}
+            type="button"
+            onClick={() => { closeMenu(); onOpenEnquiry(null, 'general'); }}
             className="btn btn-white"
             style={{ width: '100%' }}
           >

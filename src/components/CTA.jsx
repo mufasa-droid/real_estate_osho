@@ -4,34 +4,25 @@ import { BUSINESS_CONFIG } from '../config/business';
 
 export const CTA = ({ onOpenEnquiry }) => {
   return (
-    <section className="section-spacing" style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-light)' }}>
+    <section className="section-spacing cta-section" style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-light)' }}>
       <div className="site-container">
-        <div style={{
-          backgroundColor: 'var(--bg-dark)',
-          color: '#FFFFFF',
-          padding: 'clamp(3.5rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
-          <span className="eyebrow" style={{ color: '#C8B29B', marginBottom: '1.25rem', justifyContent: 'center' }}>
-            Next Chapter
+        <div className="cta-box">
+          <span className="eyebrow" style={{ color: '#D4C4B1', marginBottom: '1.25rem', justifyContent: 'center' }}>
+            Private Real Estate Advisory
           </span>
 
           <h2 className="editorial-heading" style={{ color: '#FFFFFF', maxWidth: '780px' }}>
-            Looking for your next property?
+            Looking for your next property in Lagos?
           </h2>
 
-          <p style={{ color: 'rgba(255, 255, 255, 0.75)', maxWidth: '580px', marginTop: '1.25rem', marginBottom: '2.75rem', fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.7 }}>
-            Explore our curated collection or speak directly with our private advisory team to discuss your acquisitions and confidential mandates.
+          <p style={{ color: 'rgba(255, 255, 255, 0.8)', maxWidth: '580px', marginTop: '1.25rem', marginBottom: '2.5rem', fontSize: '1.02rem', fontWeight: 300, lineHeight: 1.7 }}>
+            Explore our curated collection or speak directly with our Ikoyi advisory team to discuss private acquisitions, property viewings, or confidential mandates.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
             <button 
-              onClick={() => onOpenEnquiry(null)}
+              type="button"
+              onClick={() => onOpenEnquiry(null, 'general')}
               className="btn btn-white"
             >
               <span>Make an Enquiry</span>
@@ -39,10 +30,14 @@ export const CTA = ({ onOpenEnquiry }) => {
             </button>
 
             <a 
-              href="#collection"
+              href={BUSINESS_CONFIG.createWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-outline-white"
+              style={{ gap: '0.6rem' }}
             >
-              <span>View Properties</span>
+              <MessageCircle size={16} color="#25D366" />
+              <span>Direct WhatsApp Chat</span>
             </a>
           </div>
         </div>

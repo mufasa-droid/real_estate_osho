@@ -7,17 +7,17 @@ export const ContactSection = () => {
   const emailUrl = BUSINESS_CONFIG.createEmailLink();
 
   return (
-    <section id="contact" className="section-spacing" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-light)' }}>
+    <section id="contact" className="section-spacing contact-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-light)' }}>
       <div className="site-container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
+        <div className="contact-grid">
           {/* Left Column: Heading & Context */}
           <div>
             <span className="eyebrow">Private Client Services</span>
             <h2 className="editorial-heading" style={{ marginTop: '0.75rem', marginBottom: '1.25rem' }}>
-              Connect with our advisory.
+              Connect with our advisory desk.
             </h2>
-            <p className="body-lead" style={{ marginBottom: '2rem' }}>
-              We offer discreet, confidential representation for clients seeking to acquire, lease, or divest prime architectural real estate.
+            <p className="body-lead" style={{ marginBottom: '2rem', fontSize: '1.05rem' }}>
+              We provide discreet, confidential representation for clients acquiring, leasing, or divesting prime residential and commercial real estate across Lagos.
             </p>
 
             <a 
@@ -25,56 +25,62 @@ export const ContactSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
-              style={{ gap: '0.6rem' }}
+              style={{ gap: '0.65rem' }}
             >
-              <MessageCircle size={16} />
-              <span>Direct WhatsApp Chat</span>
+              <MessageCircle size={16} color="#25D366" />
+              <span>Direct WhatsApp Concierge</span>
             </a>
           </div>
 
           {/* Right Column: Structured Contact Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
-            {/* Phone & WhatsApp */}
-            <div style={{ backgroundColor: '#FFFFFF', padding: '1.75rem', border: '1px solid var(--border-light)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                <Phone size={18} color="var(--accent)" />
-                <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.25rem' }}>
+            {/* Phone & Direct Telephone */}
+            <div className="contact-card">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
+                <Phone size={17} color="var(--accent)" />
+                <span className="contact-card-label">
                   Telephone & Inquiries
                 </span>
               </div>
               <a 
                 href={`tel:${BUSINESS_CONFIG.contact.phoneRaw}`} 
-                style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: 'var(--text-primary)', textDecoration: 'none', display: 'block' }}
+                className="contact-card-value font-serif"
               >
                 {BUSINESS_CONFIG.contact.phone}
               </a>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginTop: '0.25rem' }}>
+                Direct line to senior property advisors
+              </span>
             </div>
 
             {/* Email */}
-            <div style={{ backgroundColor: '#FFFFFF', padding: '1.75rem', border: '1px solid var(--border-light)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                <Mail size={18} color="var(--accent)" />
-                <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)' }}>
+            <div className="contact-card">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
+                <Mail size={17} color="var(--accent)" />
+                <span className="contact-card-label">
                   Email Advisory
                 </span>
               </div>
               <a 
                 href={emailUrl} 
-                style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: 'var(--text-primary)', textDecoration: 'none', display: 'block' }}
+                className="contact-card-value font-serif"
               >
                 {BUSINESS_CONFIG.contact.email}
               </a>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginTop: '0.25rem' }}>
+                Confidential title dossiers and private viewing coordination
+              </span>
             </div>
 
             {/* Office & Hours */}
-            <div style={{ backgroundColor: '#FFFFFF', padding: '1.75rem', border: '1px solid var(--border-light)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                <MapPin size={18} color="var(--accent)" />
-                <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-muted)' }}>
-                  Private Advisory Office
+            <div className="contact-card">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
+                <MapPin size={17} color="var(--accent)" />
+                <span className="contact-card-label">
+                  Lagos Advisory Office
                 </span>
               </div>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)', fontWeight: 500, marginBottom: '0.5rem' }}>
                 {BUSINESS_CONFIG.contact.officeAddress}
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.78rem', color: 'var(--text-secondary)' }}>

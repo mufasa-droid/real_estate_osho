@@ -4,57 +4,64 @@ import { BUSINESS_CONFIG } from '../config/business';
 
 export const About = ({ onOpenEnquiry }) => {
   return (
-    <section id="about" className="section-spacing" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border-light)' }}>
+    <section id="about" className="section-spacing about-section">
       <div className="site-container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div className="about-grid">
           {/* Editorial Visual */}
-          <div className="img-editorial" style={{ aspectRatio: '4/5', boxShadow: '0 20px 40px rgba(0,0,0,0.06)' }}>
+          <div className="img-editorial about-visual">
             <img 
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
-              alt="Architectural detailing of modern residence"
+              alt="Architectural detailing of modern residence in Ikoyi"
               loading="lazy"
             />
+            <div className="about-visual-overlay">
+              <span className="about-visual-tag">Ikoyi Flagship Desk</span>
+            </div>
           </div>
 
           {/* Editorial Copy */}
-          <div>
-            <span className="eyebrow">The Philosophy</span>
-            <h2 className="editorial-heading" style={{ marginTop: '0.75rem', marginBottom: '1.75rem' }}>
-              Curated for spatial integrity and enduring distinction.
+          <div className="about-content">
+            <span className="eyebrow">About The Advisory</span>
+            <h2 className="editorial-heading" style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>
+              Built on discretion, design, and thorough market knowledge.
             </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8, fontSize: '1rem' }}>
+            <div className="about-paragraphs">
               <p>
-                {BUSINESS_CONFIG.brandName} represents an uncompromising approach to real estate curation. We do not aggregate listings; we represent a restrained selection of properties defined by architectural pedigree, natural light, and structural permanence.
+                {BUSINESS_CONFIG.brandName} is a private real-estate advisory based in Ikoyi, Lagos. Rather than operating as an open listing directory, we work closely with a select group of property owners, developers, and private buyers who value high-grade architectural design and verified documentation.
               </p>
               <p>
-                From private waterfront sanctuaries to landmark duplex penthouses, each residence in our portfolio undergoes rigorous architectural and legal due diligence before representation.
+                Whether securing a waterfront residence on Banana Island, an executive duplex penthouse in Victoria Island, or a commercial headquarters, our team ensures every acquisition is handled with personal attention, confidentiality, and sound legal diligence.
               </p>
             </div>
 
             {/* Core Values Pillars */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2.5rem', paddingTop: '2rem', borderTop: '1px solid var(--border-light)' }}>
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-                  Architectural Rigor
+            <div className="about-pillars">
+              <div className="about-pillar-item">
+                <h4 className="about-pillar-title">
+                  Curated Inventory
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Representing spaces crafted by visionary architects with honest materials and exceptional proportion.
+                <p className="about-pillar-desc">
+                  Focused exclusively on well-proportioned homes and prime commercial spaces with clear architectural character.
                 </p>
               </div>
 
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-                  Discreet Advisory
+              <div className="about-pillar-item">
+                <h4 className="about-pillar-title">
+                  Direct Representation
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Confidential representation tailored for private collectors, family offices, and institutions.
+                <p className="about-pillar-desc">
+                  One-on-one advisory for local executives, diaspora investors, and international clients seeking trusted local guidance.
                 </p>
               </div>
             </div>
 
             <div style={{ marginTop: '2.5rem' }}>
-              <button onClick={() => onOpenEnquiry(null)} className="btn btn-primary">
+              <button 
+                type="button"
+                onClick={() => onOpenEnquiry(null, 'general')} 
+                className="btn btn-primary"
+              >
                 <span>Request Private Consultation</span>
                 <ArrowRight size={15} />
               </button>
